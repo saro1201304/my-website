@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: white;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+}
+
+.hero-text h2 {
+  font-size: 32px;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.hero-img img {
+  max-width: 300px;
+}
+
+/* SERVICES */
+.services {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact p {
+  margin-top: 10px;
+}
+
+.email {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.email-btn {
+  display: inline-block;
+  margin-top: 25px;   /* 👉 spacing fix */
+  padding: 12px 30px;
+  background: #4da6ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  margin-top: 40px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin-top: 30px;
+    width: 80%;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+  }
+}
