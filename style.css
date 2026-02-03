@@ -6,91 +6,99 @@
 }
 
 body {
-  background: #f5f7fb;
+  background: #f8f9fb;
   color: #333;
+}
+
+/* Header */
+.header {
   text-align: center;
+  padding: 20px;
 }
 
-/* Navbar */
-.navbar {
-  background: #fff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header h1 {
+  font-size: 28px;
 }
 
-.navbar a {
-  margin-left: 15px;
+.header nav a {
+  margin: 0 10px;
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #555;
+  font-weight: 500;
 }
 
 /* Hero */
 .hero {
-  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
 }
 
-.hero h2 {
-  font-size: 28px;
+.hero-text h2 {
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
-.hero p {
+.hero-text p {
   font-size: 16px;
-  margin-bottom: 20px;
+  color: #666;
 }
 
-/* IMAGE STYLE */
-.hero-img {
-  max-width: 100%;
-  width: 320px;
-  margin-top: 20px;
+.hero-img img {
+  width: 260px;
 }
 
 /* Services */
 .services {
-  padding: 40px 20px;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .services h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.card {
+.service-box {
   background: #fff;
-  padding: 20px;
+  max-width: 400px;
   margin: 15px auto;
-  max-width: 350px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 /* Contact */
 .contact {
-  padding: 40px 20px;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.email {
-  font-weight: bold;
+.contact .email {
   margin: 10px 0;
+  font-weight: bold;
 }
 
 .btn {
   display: inline-block;
-  background: #4da3ff;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
   margin-top: 10px;
+  padding: 12px 25px;
+  background: #5bbad5;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .navbar {
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
     flex-direction: column;
-    gap: 10px;
+    text-align: center;
+  }
+
+  .hero-img img {
+    width: 200px;
   }
 }
