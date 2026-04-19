@@ -1,70 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Saro Expense - Budget</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saravanan | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <div class="container nav-flex">
-    <h1>Saravanan</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<div class="container">
+  <h1>💰 Saro Expense Tracker</h1>
+  <h3 id="date"></h3>
 
-<section class="hero">
-  <div class="container hero-flex">
+  <input type="number" id="budget" placeholder="Set Today Budget ₹">
+  <button onclick="setBudget()">Next ➡️</button>
+</div>
 
-    <div class="hero-text">
-      <h2>Hello, I'm <span>Saravanan</span> 👋</h2>
-      <p>I build simple and clean websites using HTML & CSS.</p>
-    </div>
+<script>
+function getToday() {
+  let d = new Date();
+  return d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,'0') + "-" +
+    String(d.getDate()).padStart(2,'0');
+}
 
-    <div class="hero-img">
-      <img src="images/hero.png" alt="Developer illustration">
-    </div>
+let today = getToday();
+document.getElementById("date").innerText = "📅 " + today;
 
-  </div>
-</section>
+let data = JSON.parse(localStorage.getItem("expenses")) || {};
 
-<section id="services" class="services">
-  <div class="container">
-    <h2>My Services</h2>
+// if already exists → go directly
+if (data[today]) {
+  window.location.href = "expense.html";
+}
 
-    <div class="card">
-      <h3>💻 Simple Website</h3>
-      <p>Clean & responsive basic websites</p>
-    </div>
+function setBudget() {
+  let b = Number(document.getElementById("budget").value);
+  if (b <= 0) return alert("Enter valid budget");
 
-    <div class="card">
-      <h3>📁 Portfolio Website</h3>
-      <p>Personal portfolio for freelancers</p>
-    </div>
+  data[today] = { budget: b, total: 0, list: [] };
+  localStorage.setItem("expenses", JSON.stringify(data));
 
-    <div class="card">
-      <h3>🚀 Landing Page</h3>
-      <p>Single page business landing sites</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>Interested to work with me?</p>
-    <p class="email">saro1201304@gmail.com</p>
-
-    <a class="btn" href="mailto:saro1201304@gmail.com">
-      Email Me
-    </a>
-  </div>
-</section>
+  window.location.href = "expense.html";
+}
+</script>
 
 </body>
 </html>

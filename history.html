@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📜 History</h1>
+  <div id="history"></div>
+  <button onclick="goBack()">⬅ Back</button>
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem("expenses")) || {};
+let container = document.getElementById("history");
+
+for (let date in data) {
+  let d = data[date];
+
+  let div = document.createElement("div");
+  div.innerHTML = `<h3>📅 ${date} (₹${d.total})</h3>`;
+
+  let ul = document.createElement("ul");
+
+  d.list.forEach(e=>{
+    let li = document.createElement("li");
+    li.innerText = `${e.item} - ₹${e.amount} (${e.time||""})`;
+    ul.appendChild(li);
+  });
+
+  div.appendChild(ul);
+  container.appendChild(div);
+}
+
+function goBack(){
+  window.location.href="expense.html";
+}
+</script>
+
+</body>
+</html>

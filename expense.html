@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Expense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🧾 Track Expenses</h1>
+  <h3 id="date"></h3>
+
+  <input type="text" id="item" placeholder="Item">
+  <input type="number" id="amount" placeholder="Amount ₹">
+  <button onclick="addExpense()">Add</button>
+
+  <h3>Total: ₹<span id="total">0</span></h3>
+  <h3 id="balance"></h3>
+  <p id="warning"></p>
+
+  <ul id="list"></ul>
+
+  <button onclick="finishDay()">✅ Finish Day</button>
+  <button onclick="viewHistory()">📜 History</button>
+
+  <hr>
+  <h3>📆 Monthly Total: ₹<span id="month"></span></h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
